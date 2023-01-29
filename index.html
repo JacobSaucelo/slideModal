@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div><h1>other divs</h1></div>
+    <div class="container">
+      <img
+        id="myImg"
+        src="https://images.unsplash.com/photo-1633421878789-30435a5f7ea8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+        alt="Snow"
+        style="width: 100%; max-width: 300px"
+        onclick="checker(this)"
+        draggable="false"
+      />
+      <img
+        id="myImg"
+        src="https://images.unsplash.com/photo-1633421878925-ac220d8f6e4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+        alt="earth"
+        style="width: 100%; max-width: 300px"
+        onclick="checker(this)"
+        draggable="false"
+      />
+      <img
+        id="myImg"
+        src="https://images.unsplash.com/photo-1633524411211-b682455441f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+        alt="earth2"
+        style="width: 100%; max-width: 300px"
+        onclick="checker(this)"
+        draggable="false"
+      />
+      <img
+        id="myImg"
+        src="https://images.unsplash.com/photo-1647700188234-ae5d6c24060c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=344&q=80"
+        alt="earth2"
+        style="width: 100%; max-width: 300px"
+        onclick="checker(this)"
+        draggable="false"
+      />
+    </div>
+    <div class="nav">
+      <button onclick="goPrev()">prev</button>
+      <button onclick="goNext()">next</button>
+    </div>
+
+    <div><h1>other divs</h1></div>
+
+    <div id="myModal" class="modal">
+      <span class="modalClose">&times;</span>
+      <img class="modal-content" id="img01" />
+      <div id="caption"></div>
+    </div>
+
+    <!-- slider -->
+    <script src="slider.js"></script>
+    <!-- Modal -->
+    <script>
+      var modal = document.getElementById("myModal");
+
+      var img = document.getElementById("myImg");
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+      function checker(obj) {
+        modal.style.display = "block";
+        modalImg.src = obj.src;
+        captionText.innerHTML = obj.alt;
+      }
+
+      var close = document.querySelector(".modalClose");
+
+      close.onclick = function () {
+        modal.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
